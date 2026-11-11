@@ -1,0 +1,164 @@
+/* ===== Base (Mobile-First) ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef1f6;
+  color: #222;
+  padding: 16px;
+}
+
+.app {
+  background: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+/* ===== Contador ===== */
+.contador {
+  background: #f5f7fb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.barra {
+  height: 10px;
+  background: #dde2ec;
+  border-radius: 5px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.barra-progreso {
+  height: 100%;
+  width: 0;
+  background: #2e9e5b;
+  transition: width 0.3s ease;
+}
+
+/* ===== Formulario ===== */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccd2de;
+  border-radius: 8px;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: #3b6fe0;
+}
+
+.error {
+  color: #c62828;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  margin: 6px 0 10px;
+}
+
+/* ===== Botones ===== */
+.btn {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-agregar { background: #3b6fe0; }
+.btn-completar { background: #2e9e5b; }
+.btn-eliminar { background: #d94343; }
+
+.btn:disabled {
+  background: #aab2c0;
+  cursor: not-allowed;
+}
+
+/* ===== Lista ===== */
+.lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tarea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #fff8e1;
+  border-left: 5px solid #f0a500;
+  border-radius: 8px;
+}
+
+.tarea .texto {
+  word-break: break-word;
+}
+
+.tarea .acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.tarea .acciones .btn {
+  flex: 1;
+}
+
+/* Tarea completada */
+.tarea.completada {
+  background: #e3f6e8;
+  border-left-color: #2e9e5b;
+}
+
+.tarea.completada .texto {
+  text-decoration: line-through;
+  color: #6b7a70;
+}
+
+.vacio {
+  text-align: center;
+  color: #777;
+  margin-top: 12px;
+}
+
+/* ===== Pantallas medianas y grandes ===== */
+@media (min-width: 600px) {
+  body { padding: 32px; }
+
+  .app { padding: 28px; }
+
+  .formulario { flex-direction: row; }
+  .formulario input { flex: 1; }
+
+  .tarea {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tarea .texto { flex: 1; }
+  .tarea .acciones .btn { flex: none; }
+}
